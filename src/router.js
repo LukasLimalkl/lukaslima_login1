@@ -1,9 +1,8 @@
 const express = require('express');
+const { getAlunos } = require('./controllers');
 
 const router = express();
 
-router.get('/', (req, res) => {
-  res.send('Use test');
-});
+router.get('/', getAlunos);
 
 module.exports = router;
