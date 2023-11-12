@@ -1,0 +1,60 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "Alunos",
+      "description": "Documentacao da api para vaga de estagio",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/alunos": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "Sucesso",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "alunos": []
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/cadastrar": {
+        "post": {
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "nome_Completo": {
+                      "type": "string"
+                    },
+                    "usuario": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "senha": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["nome_Completo", "usuario", "email", "senha"]
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Cadastro feito"
+            }
+          }
+        }
+      }
+    }
+  }
+  
