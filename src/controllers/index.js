@@ -16,7 +16,7 @@ const postAlunos = (req, res) => {
   const nomeCompleto = req.body.nomeCompleto;
 
   const sql =
-    'INSERT INTO alunos (nome_completo, email, usuario, senha) VALUES (?, ?, ?, ?)';
+    'INSERT INTO alunos (nome_Completo, usuario, email, senha) VALUES (?, ?, ?, ?)';
 
   db.query(sql, [nomeCompleto, email, username, password], (err, result) => {
     if (err) {
