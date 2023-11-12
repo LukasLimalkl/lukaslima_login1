@@ -30,4 +30,7 @@ const postAlunos = (req, res) => {
   });
 };
 
-module.exports = { getAlunos, postAlunos };
+module.exports = {
+  getAlunos,
+  postAlunos,
+};
