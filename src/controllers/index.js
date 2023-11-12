@@ -9,4 +9,25 @@ const getAlunos = (req, res) => {
   });
 };
 
-module.exports = { getAlunos };
+const postAlunos = (req, res) => {
+  const username = req.body.usuario;
+  const password = req.body.senha;
+  const email = req.body.email;
+  const nomeCompleto = req.body.nomeCompleto;
+
+  const sql =
+    'INSERT INTO alunos (nome_completo, email, usuario, senha) VALUES (?, ?, ?, ?)';
+
+  db.query(sql, [nomeCompleto, email, username, password], (err, result) => {
+    if (err) {
+      res.status(500).send('Erro ao inserir aluno no MySQL');
+      return;
+    }
+    res.status(200).json({
+      id: result.insertId,
+      mensagem: 'Aluno inserido com sucesso no MySQL',
+    });
+  });
+};
+
+module.exports = { getAlunos, postAlunos };
