@@ -1,7 +1,7 @@
 
 # Api-Estagio
 
-Projeto para a comunidade DevPass
+Projeto para vaga de estagio
 
 Funcionalidades:
 
